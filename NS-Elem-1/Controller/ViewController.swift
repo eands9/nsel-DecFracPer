@@ -73,15 +73,18 @@ class ViewController: UIViewController {
         fromUnit = unitLists[randomNumA]
         toUnit = unitLists[randomNumB]
         
-        randomNum = Int.random(in: 1...8)
-        randomDen = Int.random(in: 1...8)
+        randomNum = Int.random(in: 1...9)
+        randomDen = Int.random(in: 1...9)
         
         while randomNum >= randomDen {
-            randomNum = Int.random(in: 1...8)
-            randomDen = Int.random(in: 1...8)
+            randomNum = Int.random(in: 1...9)
+            randomDen = Int.random(in: 1...9)
         }
         if randomDen == 7{
             randomDen += 1
+        }
+        if randomDen == 9{
+            randomNum = Int.random(in: 1...3)*3
         }
         numerator = Double(randomNum)
         denominator = Double(randomDen)
